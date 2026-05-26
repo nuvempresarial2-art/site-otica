@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>A Clínica · Ótica Lebre</title>
+<meta name="description" content="Conheça a clínica de prótese ocular da Ótica Lebre — Rio Claro/SP."/>
+<link rel="icon" href="assets/logo-lebre.jpg"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    gap: 14px;
+    margin-top: 32px;
+  }
+  .gallery .gi { border-radius: var(--r-lg); transition: transform .2s; }
+  .gallery .gi:hover { transform: translateY(-3px); }
+  .gallery .gi.wide  { grid-column: span 2; }
+  .gallery .gi.tall  { grid-row: span 2; }
+
+  .feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 28px;
+    list-style: none;
+    padding: 0;
+  }
+  .feature-list li {
+    display: flex; gap: 14px;
+    padding: 18px 20px;
+    background: var(--white);
+    border: 1px solid var(--ink-200);
+    border-radius: var(--r-md);
+  }
+  .feature-list svg { color: var(--green-700); flex-shrink: 0; margin-top: 2px; }
+  .feature-list strong { display: block; color: var(--ink-900); margin-bottom: 2px; }
+  .feature-list span { font-size: 0.9rem; color: var(--ink-700); }
+
+  @media (max-width: 700px) {
+    .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
+    .gallery .gi.wide { grid-column: span 2; }
+    .gallery .gi.tall { grid-row: span 1; }
+    .feature-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div data-slot="header"></div>
+
+<div class="page-shell">
+  <div data-slot="sidebar"></div>
+  <main class="page-content">
+
+    <div class="crumb">
+      <a href="index.html">Principal</a>
+      <span class="sep">/</span>
+      <a href="protese-ocular.html">Prótese Ocular</a>
+      <span class="sep">/</span>
+      <span>A Clínica</span>
+    </div>
+
+    <div class="page-title">
+      <span class="eyebrow">Estrutura</span>
+      <h1>Uma clínica preparada para o que <em>seu olhar merece.</em></h1>
+      <p class="lede">A nossa clínica de prótese ocular foi pensada para o conforto, privacidade e cuidado técnico dos pacientes que recebemos.</p>
+    </div>
+
+    <section>
+      <div class="gallery">
+        <div class="gi ph wide tall" data-reveal><div class="ph-label">Foto · Sala de atendimento principal</div></div>
+        <div class="gi ph" data-reveal><div class="ph-label">Foto · Bancada de modelagem</div></div>
+        <div class="gi ph" data-reveal><div class="ph-label">Foto · Recepção</div></div>
+        <div class="gi ph wide" data-reveal><div class="ph-label">Foto · Sala de pintura artesanal</div></div>
+        <div class="gi ph" data-reveal><div class="ph-label">Foto · Detalhe instrumentos</div></div>
+        <div class="gi ph" data-reveal><div class="ph-label">Foto · Ambiente discreto e acolhedor</div></div>
+      </div>
+    </section>
+
+    <section>
+      <span class="eyebrow" data-reveal>Infraestrutura</span>
+      <h2 data-reveal>Tudo o que você precisa, sob o mesmo teto.</h2>
+      <p data-reveal>A clínica funciona em ambiente próprio, com salas dedicadas para cada etapa do processo. O atendimento é sempre privativo, sem fila comum com a ótica.</p>
+
+      <ul class="feature-list">
+        <li data-reveal>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          <div><strong>Sala de avaliação privativa</strong><span>Ambiente reservado para conversa e exame da cavidade.</span></div>
+        </li>
+        <li data-reveal>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/></svg>
+          <div><strong>Bancada de modelagem</strong><span>Equipamentos próprios para a confecção sob medida.</span></div>
+        </li>
+        <li data-reveal>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>
+          <div><strong>Ateliê de pintura artesanal</strong><span>Luz e cores controladas para reprodução fiel da íris.</span></div>
+        </li>
+        <li data-reveal>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9l9-6 9 6v11H3V9Z"/></svg>
+          <div><strong>Recepção acolhedora</strong><span>Acompanhantes recebidos com café e ambiente tranquilo.</span></div>
+        </li>
+        <li data-reveal>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><strong>Atendimento por hora marcada</strong><span>Sem espera. Cada paciente tem seu tempo dedicado.</span></div>
+        </li>
+        <li data-reveal>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><strong>Acesso facilitado</strong><span>Centro de Rio Claro, com estacionamento próximo.</span></div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="eyebrow" data-reveal>Equipe</span>
+      <h2 data-reveal>Profissionais que cuidam de gente.</h2>
+      <p data-reveal>A equipe da clínica combina formação técnica em prótese ocular com a sensibilidade para acolher cada paciente como pessoa, não como caso. Detalhes da equipe podem ser apresentados conforme o material que você nos enviar.</p>
+    </section>
+
+  </main>
+</div>
+
+<div data-slot="footer"></div>
+<div data-slot="wa"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

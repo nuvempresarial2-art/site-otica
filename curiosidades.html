@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Curiosidades · Saúde Visual · Ótica Lebre</title>
+<meta name="description" content="Saiba mais sobre miopia, hipermetropia, astigmatismo, presbiopia, catarata, glaucoma e diabetes ocular."/>
+<link rel="icon" href="assets/logo-lebre.jpg"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+<style>
+  .cur-hero {
+    background: linear-gradient(180deg, var(--green-50) 0%, var(--paper) 100%);
+    padding: clamp(60px, 7vw, 96px) 0 clamp(40px, 5vw, 60px);
+  }
+  .cur-hero h1 em { color: var(--green-700); font-weight: 400; }
+
+  .cur-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 56px;
+    align-items: start;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: clamp(48px, 6vw, 72px) 24px clamp(64px, 8vw, 100px);
+  }
+
+  .toc {
+    position: sticky;
+    top: 104px;
+    background: var(--white);
+    border: 1px solid var(--ink-200);
+    border-radius: var(--r-lg);
+    padding: 24px;
+  }
+  .toc-eyebrow { display: block; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-500); font-weight: 600; margin-bottom: 14px; }
+  .toc ol {
+    list-style: none; padding: 0; margin: 0;
+    counter-reset: toc;
+    display: grid; gap: 2px;
+  }
+  .toc li { counter-increment: toc; }
+  .toc a {
+    display: flex; gap: 10px;
+    padding: 8px 10px;
+    border-radius: var(--r-md);
+    font-size: 0.92rem;
+    color: var(--ink-700);
+    transition: background .15s, color .15s;
+  }
+  .toc a:hover, .toc a.active { background: var(--green-50); color: var(--green-800); }
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: var(--font-serif);
+    color: var(--green-700);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .article h2 {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--ink-200);
+    scroll-margin-top: 100px;
+  }
+  .article > h2:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+  .article h3 { color: var(--green-800); margin-top: 1.6em; font-size: 1.1rem; }
+  .article .signs {
+    background: var(--paper-2);
+    border-radius: var(--r-md);
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+  .article .signs strong { color: var(--green-800); display: block; margin-bottom: 8px; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .article .signs ul { margin: 0; padding-left: 18px; }
+
+  @media (max-width: 900px) {
+    .cur-layout { grid-template-columns: 1fr; gap: 28px; }
+    .toc { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<div data-slot="header"></div>
+
+<section class="cur-hero">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Curiosidades</span>
+    <h1 data-reveal>Saúde visual em palavras <em>que dá pra entender.</em></h1>
+    <p style="font-size: 1.08rem; max-width: 660px; margin: 18px 0 0;" data-reveal>Uma página educativa para você consultar quando bater dúvida. Nada de jargão médico — só o essencial que todo mundo deveria saber sobre os olhos.</p>
+  </div>
+</section>
+
+<div class="cur-layout">
+  <aside class="toc" data-reveal>
+    <span class="toc-eyebrow">Nesta página</span>
+    <ol>
+      <li><a href="#miopia">Miopia</a></li>
+      <li><a href="#hipermetropia">Hipermetropia</a></li>
+      <li><a href="#astigmatismo">Astigmatismo</a></li>
+      <li><a href="#presbiopia">Presbiopia</a></li>
+      <li><a href="#importancia">A importância dos óculos</a></li>
+      <li><a href="#catarata">Catarata</a></li>
+      <li><a href="#glaucoma">Glaucoma</a></li>
+      <li><a href="#diabetes">Diabetes & visão</a></li>
+      <li><a href="#cuidados">Cuidados e tratamentos</a></li>
+    </ol>
+  </aside>
+
+  <article class="article prose">
+    <p class="lead" data-reveal>As informações abaixo são introdutórias. Para diagnóstico, procure sempre um médico oftalmologista — a Ótica Lebre não realiza exames, mas confecciona o óculos a partir da receita médica.</p>
+
+    <h2 id="miopia">O que é miopia</h2>
+    <p>A miopia é o erro de refração em que o olho enxerga bem de perto, mas tem dificuldade para enxergar de longe. Acontece quando a imagem se forma antes da retina, geralmente porque o olho é "mais longo" do que o ideal. É bastante comum e tem origem genética combinada com hábitos de vida (muita leitura/tela com pouca luz natural na infância).</p>
+    <div class="signs">
+      <strong>Primeiros sinais</strong>
+      <ul>
+        <li>Dificuldade para ler placas, legendas ou ver o quadro à distância</li>
+        <li>Hábito de apertar os olhos para enxergar longe</li>
+        <li>Dores de cabeça frequentes ao final do dia</li>
+        <li>Em crianças: cair de rendimento escolar sem explicação</li>
+      </ul>
+    </div>
+
+    <h2 id="hipermetropia">O que é hipermetropia</h2>
+    <p>É o oposto da miopia: a pessoa enxerga melhor de longe e tem dificuldade para focar em objetos próximos. O olho é "mais curto" e a imagem se forma além da retina. Em crianças, costuma se compensar sozinha — o cristalino força a focar — mas pode causar cansaço visual ou estrabismo.</p>
+    <div class="signs">
+      <strong>Primeiros sinais</strong>
+      <ul>
+        <li>Vista cansada ao ler ou trabalhar com objetos próximos</li>
+        <li>Dores de cabeça frontais após esforço visual</li>
+        <li>Olhos vermelhos ou ardência depois de tempo na tela</li>
+        <li>Em crianças: dificuldade na alfabetização sem outro motivo aparente</li>
+      </ul>
+    </div>
+
+    <h2 id="astigmatismo">O que é astigmatismo</h2>
+    <p>O astigmatismo é uma deformação na curvatura da córnea (ou às vezes do cristalino) que faz com que a imagem se forme em vários pontos da retina, em vez de um só. O resultado é uma visão "borrada" ou "duplicada", tanto de longe quanto de perto. Pode aparecer junto com miopia ou hipermetropia.</p>
+    <div class="signs">
+      <strong>Primeiros sinais</strong>
+      <ul>
+        <li>Visão embaçada em qualquer distância</li>
+        <li>Letras parecem "tremidas" ou "duplicadas"</li>
+        <li>Cansaço ocular após dirigir à noite</li>
+        <li>Sensibilidade aumentada à luz</li>
+      </ul>
+    </div>
+
+    <h2 id="presbiopia">O que é presbiopia (vista cansada)</h2>
+    <p>A presbiopia é o desgaste natural da capacidade do cristalino de focar de perto. Costuma aparecer a partir dos 40 anos e atinge todo mundo. Não é uma doença — é uma condição do envelhecimento. A solução geralmente é óculos para perto, bifocal ou multifocal (Varilux).</p>
+    <div class="signs">
+      <strong>Primeiros sinais</strong>
+      <ul>
+        <li>Afastar livros, celulares ou cardápios para conseguir ler</li>
+        <li>Precisar de luz mais forte para ler de perto</li>
+        <li>Dor de cabeça e cansaço ao trabalhar com objetos próximos</li>
+        <li>Embaçamento ao alternar olhar de longe e de perto</li>
+      </ul>
+    </div>
+
+    <h2 id="importancia">A importância dos óculos</h2>
+    <p>Mais do que enxergar com nitidez, usar o óculos certo previne dores de cabeça, fadiga visual, problemas posturais (a gente se aproxima ou se afasta de mais para compensar), e em crianças, evita prejuízos no desenvolvimento e no aprendizado escolar. Óculos não "vicia" — corrige a imagem que chega na retina.</p>
+    <div class="callout">
+      <p><strong>Detalhe importante.</strong> Receita oftalmológica tem validade. A graduação muda com o tempo, sobretudo na infância e a partir dos 40 anos. Revise sua receita pelo menos uma vez por ano com um médico oftalmologista.</p>
+    </div>
+
+    <h2 id="catarata">Catarata</h2>
+    <p>A catarata é a perda de transparência do cristalino — a lente natural do olho. A visão fica progressivamente embaçada, com cores menos vivas e maior sensibilidade ao brilho. É bastante comum a partir dos 60 anos e o tratamento é cirúrgico: troca-se o cristalino opaco por uma lente intraocular. É uma das cirurgias mais realizadas e bem-sucedidas do mundo.</p>
+
+    <h2 id="glaucoma">Glaucoma</h2>
+    <p>O glaucoma é uma doença silenciosa que danifica o nervo óptico, geralmente associada à pressão intraocular elevada. A perda de visão começa pela periferia e avança sem dor — por isso muita gente só percebe quando o dano já está avançado. Diagnóstico precoce e tratamento contínuo (colírios) são fundamentais. Procure um oftalmologista anualmente, especialmente após os 40 anos ou com histórico familiar.</p>
+
+    <h2 id="diabetes">Diabetes & visão</h2>
+    <p>O diabetes mal controlado afeta diretamente os olhos, podendo causar retinopatia diabética — alteração nos vasos da retina que pode levar à perda de visão. Pessoas com diabetes devem fazer exame oftalmológico de fundo de olho pelo menos uma vez por ano, mesmo sem sintomas. A boa notícia: com controle da glicose e acompanhamento, o risco diminui muito.</p>
+
+    <h2 id="cuidados">Cuidados e tratamentos no dia a dia</h2>
+    <p>Algumas atitudes simples ajudam a preservar a saúde dos seus olhos:</p>
+    <ul>
+      <li><strong>Use óculos de sol com proteção UV</strong> sempre que estiver no sol forte — os danos são cumulativos ao longo da vida.</li>
+      <li><strong>Hidrate-se.</strong> Beber pouca água contribui para o olho seco.</li>
+      <li><strong>Faça pausas nas telas.</strong> A cada 20 minutos, olhe para algo a 6 metros por 20 segundos.</li>
+      <li><strong>Ilumine bem o ambiente de leitura.</strong> Forçar a vista em luz fraca não causa miopia, mas causa cansaço.</li>
+      <li><strong>Não compartilhe maquiagem nem colírios.</strong> Infecções podem ser sérias.</li>
+      <li><strong>Vá ao oftalmologista anualmente.</strong> Mesmo sem sintomas. Muitos problemas só são detectados em exame.</li>
+    </ul>
+
+    <div class="callout">
+      <p><strong>Lembrete.</strong> A Ótica Lebre fornece lentes e armações a partir da sua receita médica. Para diagnóstico ou troca de graduação, é necessário visitar um oftalmologista. Em caso de dúvida sobre uma receita já em mãos, traga até nós — ajudamos a interpretar.</p>
+    </div>
+
+  </article>
+</div>
+
+<div data-slot="footer"></div>
+<div data-slot="wa"></div>
+<script src="assets/site.js"></script>
+<script>
+  // active TOC highlight
+  const tocLinks = document.querySelectorAll('.toc a');
+  const headings = [...document.querySelectorAll('.article h2[id]')];
+  const setActive = () => {
+    let active = headings[0];
+    for (const h of headings) {
+      if (h.getBoundingClientRect().top < 120) active = h;
+    }
+    tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active.id));
+  };
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+</script>
+</body>
+</html>

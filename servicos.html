@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Serviços · Ótica Lebre</title>
+<meta name="description" content="Atendimento técnico, equipamentos modernos e profissionais qualificados — Ótica Lebre, Rio Claro/SP."/>
+<link rel="icon" href="assets/logo-lebre.jpg"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+<style>
+  .serv-hero {
+    background: linear-gradient(180deg, var(--green-50) 0%, var(--paper) 100%);
+    padding: clamp(60px, 7vw, 96px) 0 clamp(40px, 5vw, 60px);
+  }
+  .serv-hero h1 em { color: var(--green-700); font-weight: 400; }
+
+  .serv-list { display: grid; gap: clamp(48px, 6vw, 80px); }
+  .serv-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .serv-item.reverse > div:first-child { order: 2; }
+  .serv-photo {
+    aspect-ratio: 4/3;
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-md);
+  }
+  .serv-text .num {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--green-700);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .serv-text h2 { margin-bottom: 16px; }
+  .serv-text p { font-size: 1.04rem; }
+  .serv-text ul {
+    list-style: none; padding: 0; margin: 18px 0 0;
+    display: grid; gap: 10px;
+  }
+  .serv-text ul li {
+    display: flex; gap: 12px; align-items: flex-start;
+    font-size: 0.96rem;
+    color: var(--ink-700);
+  }
+  .serv-text ul svg { color: var(--green-700); flex-shrink: 0; margin-top: 4px; }
+
+  @media (max-width: 900px) {
+    .serv-item { grid-template-columns: 1fr; gap: 32px; }
+    .serv-item.reverse > div:first-child { order: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div data-slot="header"></div>
+
+<section class="serv-hero">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Serviços</span>
+    <h1 data-reveal>Estrutura técnica para entregar <em>o melhor óculos para você.</em></h1>
+    <p style="font-size: 1.08rem; max-width: 640px; margin: 18px 0 0;" data-reveal>Mais do que vender óculos, a Ótica Lebre é uma estrutura técnica. Conheça o que está por trás do nosso atendimento.</p>
+  </div>
+</section>
+
+<section style="padding: clamp(60px, 8vw, 100px) 0;">
+  <div class="container">
+    <div class="serv-list">
+
+      <div class="serv-item" data-reveal>
+        <div>
+          <div class="serv-photo ph"><div class="ph-label">Foto · Ótico responsável</div></div>
+        </div>
+        <div class="serv-text">
+          <span class="num">01 — Profissional</span>
+          <h2>Ótico responsável presente</h2>
+          <p>Seguindo as determinações legais, mantemos sempre a presença de um ótico responsável na loja. É ele quem orienta você sobre a melhor lente para o seu maior conforto, conferindo a receita e o tipo de armação escolhida.</p>
+          <ul>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Conferência técnica da sua receita</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Indicação da lente certa para seu caso</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Ajuste e adaptação ao seu rosto</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="serv-item reverse" data-reveal>
+        <div>
+          <div class="serv-photo ph"><div class="ph-label">Foto · Equipamentos da loja</div></div>
+        </div>
+        <div class="serv-text">
+          <span class="num">02 — Tecnologia</span>
+          <h2>Equipamentos de última geração</h2>
+          <p>Investimos constantemente em equipamentos modernos para medição, montagem e adaptação das lentes. Maior precisão na hora de fabricar e ajustar o seu óculos significa mais conforto no dia a dia.</p>
+          <ul>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Medição digital de altura pupilar</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Montagem por máquina de corte automatizado</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Aferição de lentes prontas (lensômetro)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="serv-item" data-reveal>
+        <div>
+          <div class="serv-photo ph"><div class="ph-label">Foto · Equipe Lebre</div></div>
+        </div>
+        <div class="serv-text">
+          <span class="num">03 — Equipe</span>
+          <h2>Profissionais qualificados</h2>
+          <p>Nossa equipe é treinada para combinar atendimento humano com competência técnica. Conhecemos pelo nome, lembramos da última receita e acolhemos a família inteira. É essa proximidade que mantém clientes há gerações.</p>
+          <ul>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Atendimento sem pressa, sem empurrão de venda</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Acompanhamento da adaptação após a entrega</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Ajustes pós-venda sem custo adicional</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="serv-item reverse" data-reveal>
+        <div>
+          <div class="serv-photo ph"><div class="ph-label">Foto · Sistema DUO</div></div>
+        </div>
+        <div class="serv-text">
+          <span class="num">04 — Inovação</span>
+          <h2>DUO — simulação de armação</h2>
+          <p>O sistema DUO permite que você experimente várias armações virtualmente e tire fotos para comparar lado a lado. Ajuda muito na escolha, especialmente quando você está em dúvida entre dois modelos parecidos.</p>
+          <ul>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Compare modelos lado a lado em foto</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Veja o resultado final antes de decidir</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Leve as fotos para pedir opinião em casa</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip" style="background: var(--green-800); color: white; padding: clamp(60px, 8vw, 96px) 0; text-align: center;">
+  <div class="container">
+    <h2 style="color: white; max-width: 720px; margin: 0 auto 16px;">Pronto pra escolher seu óculos com calma?</h2>
+    <p style="color: rgba(255,255,255,0.78); max-width: 540px; margin: 0 auto 32px;">Trazendo sua receita, conduzimos você por todo o processo, sem pressão e com a melhor orientação técnica.</p>
+    <a class="btn btn-light" href="contato.html">Visitar a loja</a>
+  </div>
+</section>
+
+<div data-slot="footer"></div>
+<div data-slot="wa"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

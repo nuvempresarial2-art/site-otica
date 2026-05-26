@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lentes · Ótica Lebre</title>
+<meta name="description" content="Materiais, tipos e tratamentos de lentes oftálmicas na Ótica Lebre — Rio Claro/SP."/>
+<link rel="icon" href="assets/logo-lebre.jpg"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+<style>
+  .lens-section { margin-bottom: 48px; }
+  .lens-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .lens-card {
+    background: var(--white);
+    border: 1px solid var(--ink-200);
+    border-radius: var(--r-lg);
+    padding: 24px 26px;
+    transition: border-color .2s;
+  }
+  .lens-card:hover { border-color: var(--green-100); }
+  .lens-card .icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    background: var(--green-50);
+    color: var(--green-700);
+    display: grid; place-items: center;
+    margin-bottom: 16px;
+  }
+  .lens-card h3 { font-size: 1.15rem; margin: 0 0 6px; font-family: var(--font-sans); }
+  .lens-card p { font-size: 0.94rem; margin: 0; color: var(--ink-700); }
+  .lens-card .badge {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--green-800);
+    background: var(--green-50);
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+  }
+
+  .varilux-block {
+    background: linear-gradient(135deg, var(--green-800), var(--green-900));
+    color: white;
+    border-radius: var(--r-xl);
+    padding: clamp(28px, 4vw, 44px);
+    margin: 36px 0 0;
+  }
+  .varilux-block .eyebrow { color: var(--gold-soft); }
+  .varilux-block .eyebrow::before { background: var(--gold-soft); }
+  .varilux-block h2 { color: white; margin-top: 14px; }
+  .varilux-block p { color: rgba(255,255,255,0.82); }
+
+  @media (max-width: 700px) {
+    .lens-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div data-slot="header"></div>
+
+<div class="page-shell">
+  <div data-slot="sidebar"></div>
+  <main class="page-content">
+
+    <div class="crumb">
+      <a href="index.html">Principal</a><span class="sep">/</span>
+      <a href="produtos.html">Produtos</a><span class="sep">/</span>
+      <span>Lentes</span>
+    </div>
+
+    <div class="page-title">
+      <span class="eyebrow">Lentes</span>
+      <h1>A lente certa <em>faz toda a diferença.</em></h1>
+      <p class="lede">Material, tipo e tratamentos — três decisões que definem o conforto do seu óculos. Nosso ótico responsável te orienta em cada uma delas.</p>
+    </div>
+
+    <section class="lens-section">
+      <span class="eyebrow" data-reveal>Materiais</span>
+      <h2 data-reveal>De que é feita a lente.</h2>
+      <p data-reveal>O material define peso, resistência e nitidez. Cada um tem aplicação ideal.</p>
+
+      <div class="lens-grid">
+        <div class="lens-card" data-reveal>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>Resina acrílica</h3>
+          <p>Leve, resistente a impactos e a opção mais usada hoje. Ótimo custo-benefício para a maioria das graduações.</p>
+        </div>
+        <div class="lens-card" data-reveal>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <h3>Cristal</h3>
+          <p>Material de vidro com nitidez óptica superior e ótima resistência a riscos. Pesa mais — indicado para quem prioriza qualidade visual.</p>
+        </div>
+        <div class="lens-card" data-reveal>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 4 5v6c0 5 3.5 9.4 8 11 4.5-1.6 8-6 8-11V5l-8-3Z"/></svg></div>
+          <h3>Policarbonato</h3>
+          <p>Material altamente resistente a impactos — ideal para crianças, esportistas e armações sem aro. Mais leve que o cristal.</p>
+        </div>
+        <div class="lens-card" data-reveal>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h18M12 3a9 9 0 0 1 0 18M12 3a9 9 0 0 0 0 18"/></svg></div>
+          <h3>Alto índice</h3>
+          <p>Lentes ultra finas — fundamentais para graus altos, porque reduzem a espessura sem perda óptica e ficam esteticamente melhores na armação.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lens-section">
+      <span class="eyebrow" data-reveal>Tipos</span>
+      <h2 data-reveal>Para o que sua lente vai servir.</h2>
+      <p data-reveal>Cada receita tem um tipo de lente correspondente. Ao trazer sua prescrição, indicamos a melhor opção.</p>
+
+      <div class="lens-grid">
+        <div class="lens-card" data-reveal>
+          <span class="badge">Mais comum</span>
+          <h3>Visão simples</h3>
+          <p>Uma única graduação — para miopia, hipermetropia ou astigmatismo. A lente clássica de quem só precisa enxergar de longe ou de perto.</p>
+        </div>
+        <div class="lens-card" data-reveal>
+          <h3>Bifocal</h3>
+          <p>Duas graduações em uma única lente, divididas por uma linha visível. Para quem precisa de visão de longe e de perto.</p>
+        </div>
+        <div class="lens-card" data-reveal>
+          <span class="badge">Sem linha</span>
+          <h3>Multifocal</h3>
+          <p>Várias graduações em transição suave — longe, intermediária e perto, sem linha. A solução moderna para a presbiopia.</p>
+        </div>
+        <div class="lens-card" data-reveal>
+          <h3>Alto índice</h3>
+          <p>Versões mais finas das lentes acima, indicadas para graus elevados. Mais leves no rosto e esteticamente discretas.</p>
+        </div>
+      </div>
+
+      <div class="varilux-block" data-reveal>
+        <span class="eyebrow">Especialista Varilux</span>
+        <h2>Por que multifocal Varilux na Ótica Lebre.</h2>
+        <p style="font-size: 1.04rem;">Ser <strong>"Especialista Varilux"</strong> significa que a Lebre passou por avaliações da fabricante das lentes progressivas mais famosas do mundo — e fomos aprovados pela qualidade do atendimento e pela precisão da adaptação. Para quem está começando com multifocal, isso faz diferença.</p>
+      </div>
+    </section>
+
+    <section class="lens-section">
+      <span class="eyebrow" data-reveal>Tratamentos</span>
+      <h2 data-reveal>Camadas extras de proteção e conforto.</h2>
+      <p data-reveal>Os tratamentos são aplicados sobre o material da lente. Você pode combinar mais de um, e cada um tem seu papel.</p>
+
+      <div class="lens-grid">
+        <div class="lens-card" data-reveal>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></div>
+          <h3>Antirreflexo</h3>
+          <p>Elimina os reflexos na lente — ótimo para dirigir à noite, usar telas e para a estética (ninguém vê a luz refletida no seu óculos).</p>
+        </div>
+        <div class="lens-card" data-reveal>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 4 5v6c0 5 3.5 9.4 8 11 4.5-1.6 8-6 8-11V5l-8-3Z"/></svg></div>
+          <h3>Antirrisco</h3>
+          <p>Camada extra de proteção contra riscos do dia a dia. Quase obrigatório em qualquer lente que vai durar mais de um ano.</p>
+        </div>
+        <div class="lens-card" data-reveal>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg></div>
+          <h3>Transitions (fotossensível)</h3>
+          <p>A lente escurece ao sol e fica transparente em ambientes internos. Ideal para quem não quer carregar dois óculos.</p>
+        </div>
+        <div class="lens-card" data-reveal>
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Filtro de luz azul</h3>
+          <p>Reduz a luz azul de telas (celular, computador). Indicado para quem passa muitas horas na frente do computador.</p>
+        </div>
+      </div>
+
+      <div class="prose" style="margin-top: 32px;">
+        <div class="callout">
+          <p><strong>Curiosidade da Lebre.</strong> Em geral, recomendamos a combinação de antirreflexo + antirrisco em todas as lentes. São tratamentos que multiplicam a durabilidade e o conforto, sem encarecer significativamente o óculos.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div data-slot="footer"></div>
+<div data-slot="wa"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

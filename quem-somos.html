@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quem Somos · Ótica Lebre</title>
+<meta name="description" content="Há mais de 50 anos cuidando da saúde visual de Rio Claro/SP. Conheça a história da Ótica Lebre."/>
+<link rel="icon" href="assets/logo-lebre.jpg"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+<style>
+  .page-hero {
+    background: linear-gradient(180deg, var(--green-50) 0%, var(--paper) 100%);
+    padding: clamp(60px, 8vw, 100px) 0 clamp(50px, 6vw, 80px);
+  }
+  .page-hero h1 { max-width: 760px; }
+  .page-hero p.lede { max-width: 620px; font-size: 1.08rem; }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 72px;
+    align-items: start;
+  }
+  .story-photo {
+    aspect-ratio: 4/5;
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-md);
+    position: sticky; top: 100px;
+  }
+  .story-text p { font-size: 1.05rem; }
+  .story-text blockquote {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    line-height: 1.4;
+    color: var(--green-800);
+    font-style: italic;
+    border-left: 3px solid var(--green-700);
+    padding: 8px 0 8px 24px;
+    margin: 32px 0;
+    font-weight: 400;
+  }
+
+  .timeline {
+    background: var(--paper-2);
+  }
+  .tl-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .tl-item {
+    background: var(--white);
+    padding: 32px 24px;
+    border-radius: var(--r-lg);
+    border-top: 3px solid var(--green-700);
+    box-shadow: var(--shadow-sm);
+  }
+  .tl-item .yr {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    color: var(--green-700);
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .tl-item h4 {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+    color: var(--ink-900);
+  }
+  .tl-item p { font-size: 0.92rem; margin: 0; }
+
+  .values .v-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+  }
+  .v-card {
+    padding: 32px 28px;
+    background: var(--white);
+    border: 1px solid var(--ink-200);
+    border-radius: var(--r-lg);
+  }
+  .v-card svg {
+    color: var(--green-700);
+    margin-bottom: 18px;
+  }
+  .v-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+  .v-card p { font-size: 0.95rem; margin: 0; }
+
+  @media (max-width: 880px) {
+    .story-grid { grid-template-columns: 1fr; gap: 40px; }
+    .story-photo { position: static; max-width: 480px; }
+    .tl-grid { grid-template-columns: repeat(2, 1fr); }
+    .values .v-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div data-slot="header"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Quem somos</span>
+    <h1 data-reveal>Uma tradição de Rio Claro há <em style="color: var(--green-700); font-weight: 400;">mais de meio século.</em></h1>
+    <p class="lede" data-reveal>Mais que uma ótica: uma referência em saúde visual que se tornou parte da rotina das famílias da cidade — e hoje recebe pacientes de toda a região.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-photo ph" data-reveal>
+        <div class="ph-label">
+          <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V9Z"/></svg>
+          <div>Foto · Fachada / interior da loja</div>
+        </div>
+      </div>
+      <div class="story-text" data-reveal>
+        <span class="eyebrow">Nossa história</span>
+        <h2>Tudo começa com a confiança de quem te atende.</h2>
+        <p>Somos profissionais no ramo ótico, atuando com a maior responsabilidade em todos os serviços prestados. A Ótica Lebre sempre se destacou — e continua se destacando — em Rio Claro e região, pela sua tradição.</p>
+
+        <p>Hoje, ainda mais, pela <strong>clínica de prótese ocular sob medida</strong>: um serviço técnico de altíssima especialização que poucas óticas no Brasil oferecem.</p>
+
+        <blockquote>"Nós da Ótica Lebre — seguindo as determinações legais — mantemos sempre a presença de ótico responsável, que pode prestar todas as informações e orientá-lo sobre a melhor lente para o seu maior conforto."</blockquote>
+
+        <p>Fomos homenageados como a melhor ótica da cidade pela pesquisa popular da TV Rio Claro (Troféu Presença), pelo Troféu Imprensa de Rio Claro e pela Revista Top Model. Somos também <strong>"Especialista Varilux"</strong>, título conferido pela marca em função da qualidade dos nossos serviços.</p>
+
+        <p>A Ótica Lebre proporciona ao usuário de óculos uma visão perfeita aliada ao conforto das lentes e das armações oferecidas. Somos a Ótica Lebre — sua nova ótica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline">
+  <div class="container">
+    <div style="max-width: 720px;" data-reveal>
+      <span class="eyebrow">Linha do tempo</span>
+      <h2>Cinco décadas de cuidado com o seu olhar.</h2>
+    </div>
+    <div class="tl-grid">
+      <div class="tl-item" data-reveal>
+        <div class="yr">1972</div>
+        <h4>Onde tudo começou</h4>
+        <p>Inauguração da Ótica Lebre no centro de Rio Claro, com foco em óculos de grau e atendimento de bairro.</p>
+      </div>
+      <div class="tl-item" data-reveal>
+        <div class="yr">90s</div>
+        <h4>Reconhecimento local</h4>
+        <p>Primeiros prêmios populares: Troféu Presença, Troféu Imprensa e Revista Top Model como melhor ótica da cidade.</p>
+      </div>
+      <div class="tl-item" data-reveal>
+        <div class="yr">2000s</div>
+        <h4>Especialista Varilux</h4>
+        <p>Recebemos a certificação Varilux pelo padrão de atendimento técnico e qualidade na adaptação de lentes progressivas.</p>
+      </div>
+      <div class="tl-item" data-reveal>
+        <div class="yr">Hoje</div>
+        <h4>Clínica de prótese ocular</h4>
+        <p>Método exclusivo de confecção por modelagem. Atendemos pacientes de Rio Claro e de toda a região.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="container">
+    <div style="max-width: 680px;" data-reveal>
+      <span class="eyebrow">O que nos guia</span>
+      <h2>Três coisas pelas quais a gente não abre mão.</h2>
+    </div>
+    <div class="v-grid">
+      <div class="v-card" data-reveal>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 4 5v6c0 5 3.5 9.4 8 11 4.5-1.6 8-6 8-11V5l-8-3Z"/></svg>
+        <h3>Responsabilidade técnica</h3>
+        <p>Sempre com ótico responsável presente, seguindo todas as determinações legais. Você é orientado pela melhor lente para o seu caso.</p>
+      </div>
+      <div class="v-card" data-reveal>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/></svg>
+        <h3>Atendimento humano</h3>
+        <p>A gente conhece pelo nome. Recebemos famílias que voltam há gerações — porque cuidado com o olhar é uma coisa próxima.</p>
+      </div>
+      <div class="v-card" data-reveal>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h3>Tradição que se renova</h3>
+        <p>Mais de 50 anos de história, mas sempre atualizados. Trabalhamos com tecnologia de ponta em lentes e equipamentos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip" style="background: var(--green-800); color: white; padding: clamp(60px, 8vw, 96px) 0; text-align: center;">
+  <div class="container">
+    <h2 style="color: white; max-width: 720px; margin: 0 auto 16px;">Venha conhecer a Ótica Lebre pessoalmente.</h2>
+    <p style="color: rgba(255,255,255,0.78); max-width: 540px; margin: 0 auto 32px;">Estamos no centro de Rio Claro de segunda a sábado. Será um prazer receber você.</p>
+    <a class="btn btn-light" href="contato.html">Ver endereço e horários</a>
+  </div>
+</section>
+
+<div data-slot="footer"></div>
+<div data-slot="wa"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

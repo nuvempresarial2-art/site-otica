@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contato · Ótica Lebre · Rio Claro/SP</title>
+<meta name="description" content="Endereço, telefone, WhatsApp e formulário de contato — Ótica Lebre, Rio Claro/SP."/>
+<link rel="icon" href="assets/logo-lebre.jpg"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    align-items: start;
+    margin-top: 8px;
+  }
+  .info-stack { display: grid; gap: 14px; }
+  .info-card {
+    background: var(--white);
+    border: 1px solid var(--ink-200);
+    border-radius: var(--r-lg);
+    padding: 22px 24px;
+    display: flex; gap: 16px; align-items: flex-start;
+    transition: border-color .2s, transform .2s;
+  }
+  .info-card:hover { border-color: var(--green-100); transform: translateY(-2px); }
+  .info-icon {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    background: var(--green-50);
+    color: var(--green-700);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .info-card h4 {
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-500);
+    margin: 0 0 6px;
+  }
+  .info-card .v {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--ink-900);
+    line-height: 1.3;
+    font-weight: 500;
+  }
+  .info-card a.v:hover { color: var(--green-700); }
+  .info-card span { font-size: 0.88rem; color: var(--ink-500); display: block; margin-top: 4px; }
+
+  /* hours */
+  .hours-list { width: 100%; margin-top: 6px; }
+  .hours-list .row {
+    display: flex; justify-content: space-between;
+    padding: 6px 0;
+    font-size: 0.92rem;
+    border-bottom: 1px dashed var(--ink-200);
+  }
+  .hours-list .row:last-child { border-bottom: 0; }
+  .hours-list .row .day { color: var(--ink-700); }
+  .hours-list .row .hr { color: var(--ink-900); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .hours-list .row.closed .hr { color: var(--ink-500); font-weight: 400; }
+  .hours-list .row.today .day,
+  .hours-list .row.today .hr { color: var(--green-700); font-weight: 600; }
+
+  /* form */
+  form.contact-form {
+    background: var(--white);
+    border: 1px solid var(--ink-200);
+    border-radius: var(--r-xl);
+    padding: clamp(24px, 3vw, 36px);
+  }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field.full { grid-column: 1 / -1; }
+  .field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--ink-700);
+  }
+  .field input, .field select, .field textarea {
+    font-family: var(--font-sans);
+    font-size: 0.96rem;
+    padding: 12px 14px;
+    border: 1px solid var(--ink-200);
+    border-radius: var(--r-md);
+    background: var(--paper);
+    color: var(--ink-900);
+    transition: border-color .15s, box-shadow .15s, background .15s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none; border-color: var(--green-700); background: var(--white);
+    box-shadow: 0 0 0 3px var(--green-100);
+  }
+  .field textarea { resize: vertical; min-height: 120px; }
+  .form-foot {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px; flex-wrap: wrap; margin-top: 8px;
+  }
+  .form-foot small { color: var(--ink-500); font-size: 0.82rem; max-width: 360px; }
+
+  /* units */
+  .units {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 18px; margin-top: 32px;
+  }
+  .unit {
+    background: var(--white);
+    border: 1px solid var(--ink-200);
+    border-radius: var(--r-lg);
+    padding: 24px 26px;
+  }
+  .unit .badge {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--green-800); background: var(--green-50);
+    padding: 4px 10px; border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .unit h3 {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+  }
+  .unit p { font-size: 0.94rem; margin: 0 0 4px; }
+  .unit .resp { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--ink-200); font-size: 0.86rem; color: var(--ink-500); }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+    .field-row { grid-template-columns: 1fr; }
+    .units { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div data-slot="header"></div>
+
+<div class="page-shell">
+  <div data-slot="sidebar"></div>
+  <main class="page-content">
+
+    <div class="crumb">
+      <a href="index.html">Principal</a><span class="sep">/</span>
+      <span>Contato</span>
+    </div>
+
+    <div class="page-title">
+      <span class="eyebrow">Contato</span>
+      <h1>Vem tomar um café com a gente <em>na R. 3, 885.</em></h1>
+      <p class="lede">Estamos no centro de Rio Claro, prontos para receber você. Pode passar sem agendar — ou, se preferir adiantar, chama no WhatsApp.</p>
+    </div>
+
+    <section>
+      <div class="contact-grid">
+
+        <div class="info-stack">
+          <div class="info-card" data-reveal>
+            <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div style="flex:1;">
+              <h4>Endereço</h4>
+              <a class="v" href="https://www.google.com/maps/place/%C3%93tica+Lebre/@-22.411788,-47.559345,19z/data=!4m10!1m2!2m1!1sOtica+Lebre,+Rio+Claro,+SP!3m6!1s0x94c7da5a8a7e9c51:0xb0258b71657cbdbb!8m2!3d-22.4116302!4d-47.5593625" target="_blank" rel="noopener">R. 3, 885 — Centro</a>
+              <span>Rio Claro · SP · 13500-160</span>
+            </div>
+          </div>
+
+          <div class="info-card" data-reveal>
+            <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+            <div style="flex:1;">
+              <h4>Telefone & WhatsApp</h4>
+              <a class="v" href="tel:+551935248410">(19) 3524-8410</a>
+              <span>Atendimento de seg a sáb</span>
+            </div>
+          </div>
+
+          <div class="info-card" data-reveal>
+            <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <div style="flex:1;">
+              <h4>Horário de funcionamento</h4>
+              <div class="hours-list" id="hoursList">
+                <div class="row" data-day="1"><span class="day">Segunda</span><span class="hr">08h00 — 19h00</span></div>
+                <div class="row" data-day="2"><span class="day">Terça</span><span class="hr">08h00 — 19h00</span></div>
+                <div class="row" data-day="3"><span class="day">Quarta</span><span class="hr">08h00 — 19h00</span></div>
+                <div class="row" data-day="4"><span class="day">Quinta</span><span class="hr">08h00 — 19h00</span></div>
+                <div class="row" data-day="5"><span class="day">Sexta</span><span class="hr">08h00 — 19h00</span></div>
+                <div class="row" data-day="6"><span class="day">Sábado</span><span class="hr">08h00 — 14h00</span></div>
+                <div class="row closed" data-day="0"><span class="day">Domingo</span><span class="hr">Fechado</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card" data-reveal>
+            <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+            <div style="flex:1;">
+              <h4>Instagram</h4>
+              <a class="v" href="https://www.instagram.com/oticalebre/" target="_blank" rel="noopener">@oticalebre</a>
+              <span>Acompanhe novidades e bastidores</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" data-reveal>
+          <span class="eyebrow">Envie uma mensagem</span>
+          <h3 style="margin-bottom: 18px; margin-top: 6px;">A gente responde rapidinho.</h3>
+
+          <div class="field-row">
+            <div class="field full">
+              <label for="setor">Setor</label>
+              <select id="setor" name="setor">
+                <option>Ótica Lebre</option>
+                <option>Prótese Ocular Sob Medida</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" required placeholder="Seu nome"/>
+            </div>
+            <div class="field">
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(19) 99999-9999"/>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field full">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com"/>
+            </div>
+          </div>
+          <div class="field full" style="margin-bottom: 18px;">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" required placeholder="Conte um pouco sobre o que precisa..."></textarea>
+          </div>
+          <div class="form-foot">
+            <small>Ao enviar, você concorda em ser contatado pela Ótica Lebre.</small>
+            <button class="btn btn-primary btn-arrow" type="submit">
+              Enviar mensagem
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+      <div class="units">
+        <div class="unit" data-reveal>
+          <span class="badge">Unidade</span>
+          <h3>Ótica Lebre</h3>
+          <p><strong>R. 3, 885</strong> — Centro</p>
+          <p>Rio Claro · SP · 13500-160</p>
+          <p><a href="tel:+551935248410" style="color: var(--green-700);">(19) 3524-8410</a></p>
+          <p class="resp">Responsável técnico: a confirmar com o cliente</p>
+        </div>
+        <div class="unit" data-reveal>
+          <span class="badge">Unidade</span>
+          <h3>Departamento de Prótese Ocular</h3>
+          <p>Mesmo endereço da ótica, atendimento com hora marcada.</p>
+          <p>Para pacientes que vêm de outras cidades, agende pelo WhatsApp.</p>
+          <p class="resp">Responsável técnico: a confirmar com o cliente</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div data-slot="footer"></div>
+<div data-slot="wa"></div>
+<script src="assets/site.js"></script>
+<script>
+  (function() {
+    const today = new Date().getDay();
+    const row = document.querySelector(`#hoursList .row[data-day="${today}"]`);
+    if (row) row.classList.add('today');
+  })();
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const d = new FormData(this);
+    const msg = `Olá! Vim pelo site da Ótica Lebre.%0A%0A`
+      + `*Setor:* ${encodeURIComponent(d.get('setor')||'')}%0A`
+      + `*Nome:* ${encodeURIComponent(d.get('nome')||'')}%0A`
+      + `*Telefone:* ${encodeURIComponent(d.get('telefone')||'')}%0A`
+      + `*E-mail:* ${encodeURIComponent(d.get('email')||'')}%0A%0A`
+      + `${encodeURIComponent(d.get('mensagem')||'')}`;
+    window.open(`https://api.whatsapp.com/send/?phone=551935248410&text=${msg}`, '_blank');
+  });
+</script>
+</body>
+</html>

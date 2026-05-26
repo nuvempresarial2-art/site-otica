@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Prótese Ocular sob medida · Ótica Lebre</title>
+<meta name="description" content="Clínica de prótese ocular sob medida em Rio Claro/SP. Método exclusivo por modelagem para maior conforto e movimentação natural."/>
+<link rel="icon" href="assets/logo-lebre.jpg"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+<style>
+  .pp-hero {
+    aspect-ratio: 16/9;
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 40px;
+  }
+  .pp-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 32px;
+  }
+  .compare-card {
+    background: var(--white);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    border: 1px solid var(--ink-200);
+  }
+  .compare-card .img { aspect-ratio: 4/3; border-radius: 0; }
+  .compare-card .label {
+    padding: 14px 18px;
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-700);
+    border-top: 1px solid var(--ink-200);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .compare-card.after .label { color: var(--green-700); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 32px;
+    counter-reset: step;
+  }
+  .step {
+    background: var(--white);
+    padding: 24px;
+    border-radius: var(--r-lg);
+    border: 1px solid var(--ink-200);
+    counter-increment: step;
+  }
+  .step::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--green-700);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .step h4 { font-family: var(--font-sans); font-size: 1.02rem; margin: 0 0 6px; }
+  .step p { font-size: 0.92rem; margin: 0; }
+
+  details {
+    background: var(--white);
+    border: 1px solid var(--ink-200);
+    border-radius: var(--r-lg);
+    margin-bottom: 10px;
+  }
+  details[open] { border-color: var(--green-100); }
+  summary {
+    list-style: none; cursor: pointer; padding: 18px 22px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    font-weight: 600; font-size: 0.98rem; color: var(--ink-900);
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+';
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--green-700);
+    line-height: 1;
+  }
+  details[open] summary::after { content: '−'; }
+  details > div {
+    padding: 0 22px 20px;
+    color: var(--ink-700);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 700px) {
+    .pp-intro-grid { grid-template-columns: 1fr; gap: 24px; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div data-slot="header"></div>
+
+<div class="page-shell">
+  <div data-slot="sidebar"></div>
+
+  <main class="page-content">
+
+    <div class="crumb">
+      <a href="index.html">Principal</a>
+      <span class="sep">/</span>
+      <span>Prótese Ocular</span>
+    </div>
+
+    <div class="page-title">
+      <span class="eyebrow">Clínica de Prótese</span>
+      <h1>Prótese ocular <em>sob medida.</em></h1>
+      <p class="lede">Método exclusivo de confecção por <strong>modelagem</strong>, que garante encaixe perfeito, movimentação natural e estética devolvendo confiança e bem-estar para nossos pacientes.</p>
+    </div>
+
+    <div class="pp-hero" style="background: url('assets/protese-hero.jpg') center/cover; box-shadow: var(--shadow-md); aspect-ratio: 16/9; border-radius: var(--r-xl); margin-bottom: 40px;"></div>
+
+    <section>
+      <div class="pp-intro-grid">
+        <div data-reveal>
+          <span class="eyebrow">Sobre o serviço</span>
+          <h2>Cada olho é único.<br/>Sua prótese deveria ser também.</h2>
+        </div>
+        <div data-reveal>
+          <p style="font-size: 1.05rem;">A prótese ocular é uma peça delicada que exige atenção a cada detalhe — formato, cor da íris, padrão dos vasos, brilho. Por isso, na Ótica Lebre, trabalhamos com um método exclusivo de confecção por modelagem: a peça é feita literalmente sob medida para a cavidade de cada paciente.</p>
+          <p>O resultado é uma prótese mais confortável no uso diário, com <strong>movimentação que acompanha o olho natural</strong> e estética que devolve a confiança de quem precisa dela.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <span class="eyebrow" data-reveal>Resultado</span>
+      <h2 data-reveal>Antes e depois da adaptação.</h2>
+      <p data-reveal>Imagens reais de pacientes da nossa clínica, publicadas com autorização. A naturalidade do resultado vem do processo artesanal de modelagem e pintura.</p>
+      <div class="compare-grid">
+        <div class="compare-card" data-reveal>
+          <div class="img ph"><div class="ph-label">Foto · antes da prótese</div></div>
+          <div class="label"><span>Antes</span><span style="color:var(--ink-500);">Cavidade sem prótese</span></div>
+        </div>
+        <div class="compare-card after" data-reveal>
+          <div class="img ph"><div class="ph-label">Foto · depois da prótese</div></div>
+          <div class="label"><span>Depois</span><span>Prótese sob medida</span></div>
+        </div>
+      </div>
+      <p style="margin-top: 18px; font-size: 0.86rem; color: var(--ink-500);">As fotos podem ser substituídas por imagens reais quando o cliente nos enviar o material.</p>
+    </section>
+
+    <section>
+      <span class="eyebrow" data-reveal>Processo</span>
+      <h2 data-reveal>Como funciona, etapa por etapa.</h2>
+      <p data-reveal>Conduzimos cada paciente com calma e explicação. As principais fases do trabalho:</p>
+      <div class="steps">
+        <div class="step" data-reveal>
+          <h4>Avaliação inicial</h4>
+          <p>Conversa para entender seu caso, histórico e necessidades. Avaliação técnica da cavidade ocular.</p>
+        </div>
+        <div class="step" data-reveal>
+          <h4>Modelagem da peça</h4>
+          <p>Confecção do molde sob medida pela técnica exclusiva, garantindo encaixe perfeito.</p>
+        </div>
+        <div class="step" data-reveal>
+          <h4>Pintura artesanal</h4>
+          <p>Reprodução fiel da íris, do branco do olho e dos vasos para máxima naturalidade.</p>
+        </div>
+        <div class="step" data-reveal>
+          <h4>Adaptação e ajustes</h4>
+          <p>Acompanhamos a adaptação e fazemos ajustes finos quando necessário.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <span class="eyebrow" data-reveal>Perguntas frequentes</span>
+      <h2 data-reveal>O que costumam nos perguntar.</h2>
+      <div style="margin-top: 32px;">
+        <details data-reveal>
+          <summary>Em quanto tempo fica pronta a prótese?</summary>
+          <div>O tempo varia conforme cada caso, mas em geral o processo completo — da avaliação à entrega — leva algumas semanas. Explicamos o cronograma do seu caso na primeira consulta.</div>
+        </details>
+        <details data-reveal>
+          <summary>Vocês atendem pacientes de outras cidades?</summary>
+          <div>Sim. Recebemos pacientes de toda a região e do estado. Procuramos organizar as consultas para reduzir o número de viagens — fale com a gente pelo WhatsApp para combinarmos as datas.</div>
+        </details>
+        <details data-reveal>
+          <summary>Preciso de encaminhamento médico?</summary>
+          <div>Recomendamos que o paciente já tenha sido avaliado por um médico oftalmologista. Trabalhamos em parceria com profissionais quando necessário.</div>
+        </details>
+        <details data-reveal>
+          <summary>A prótese precisa de manutenção?</summary>
+          <div>Sim. Recomendamos polimento periódico e revisão anual para manter a peça em ótimas condições. Esse acompanhamento é parte do nosso compromisso com você.</div>
+        </details>
+        <details data-reveal>
+          <summary>Como agendar uma avaliação?</summary>
+          <div>Pelo WhatsApp <strong>(19) 3524-8410</strong> ou pessoalmente na nossa loja, na R. 3, 885 — Centro de Rio Claro. O primeiro contato é sempre uma conversa, sem compromisso.</div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<section class="cta-strip" style="background: var(--green-800); color: white; padding: clamp(60px, 8vw, 96px) 0; text-align: center;">
+  <div class="container">
+    <h2 style="color: white; max-width: 720px; margin: 0 auto 16px;">Conversamos sobre o seu caso?</h2>
+    <p style="color: rgba(255,255,255,0.78); max-width: 540px; margin: 0 auto 32px;">A primeira conversa é sem compromisso. Estamos aqui para esclarecer dúvidas com calma.</p>
+    <div style="display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+      <a class="btn btn-light" href="https://api.whatsapp.com/send/?phone=551935248410&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+pr%C3%B3tese+ocular." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+      <a class="btn btn-ghost" href="clinica.html" style="color: white; border-color: rgba(255,255,255,0.3);">Conhecer a clínica</a>
+    </div>
+  </div>
+</section>
+
+<div data-slot="footer"></div>
+<div data-slot="wa"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

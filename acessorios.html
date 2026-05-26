@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Acessórios · Ótica Lebre</title>
+<meta name="description" content="Acessórios para óculos na Ótica Lebre — Rio Claro/SP."/>
+<link rel="icon" href="assets/logo-lebre.jpg"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+<style>
+  .acc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .acc {
+    background: var(--white);
+    border: 1px solid var(--ink-200);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s, border-color .2s;
+  }
+  .acc:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--green-100); }
+  .acc .img { aspect-ratio: 1/1; }
+  .acc .meta { padding: 18px 20px; }
+  .acc .name { font-family: var(--font-serif); font-size: 1.1rem; color: var(--ink-900); display: block; margin-bottom: 4px; }
+  .acc .desc { font-size: 0.88rem; color: var(--ink-500); }
+
+  @media (max-width: 720px) {
+    .acc-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div data-slot="header"></div>
+
+<div class="page-shell">
+  <div data-slot="sidebar"></div>
+  <main class="page-content">
+
+    <div class="crumb">
+      <a href="index.html">Principal</a><span class="sep">/</span>
+      <a href="produtos.html">Produtos</a><span class="sep">/</span>
+      <span>Acessórios</span>
+    </div>
+
+    <div class="page-title">
+      <span class="eyebrow">Acessórios</span>
+      <h1>Para manter seu óculos <em>como novo.</em></h1>
+      <p class="lede">Pequenos itens que fazem grande diferença no dia a dia e na durabilidade das suas lentes. Tudo na ponta da nossa vitrine.</p>
+    </div>
+
+    <section>
+      <div class="acc-grid">
+        <div class="acc" data-reveal>
+          <div class="img" style="background: url('assets/limpa-lentes.jpg') center/cover; aspect-ratio: 1/1;"></div>
+          <div class="meta"><span class="name">Limpa-lentes</span><span class="desc">Solução para limpeza diária das lentes</span></div>
+        </div>
+        <div class="acc" data-reveal>
+          <div class="img" style="background: url('assets/estojo-lentes.jpg') center/cover; aspect-ratio: 1/1;"></div>
+          <div class="meta"><span class="name">Estojo para lentes de contato</span><span class="desc">Com espelho e divisórias direito/esquerdo</span></div>
+        </div>
+        <div class="acc" data-reveal>
+          <div class="img" style="background: url('assets/corrente-oculos.jpg') center/cover; aspect-ratio: 1/1;"></div>
+          <div class="meta"><span class="name">Corrente para óculos</span><span class="desc">Para quem tira e coloca o óculos com frequência</span></div>
+        </div>
+      </div>
+
+      <p style="margin-top: 24px; font-size: 0.86rem; color: var(--ink-500);">Linha de acessórios da Ótica Lebre disponível em loja. Pergunte por outros itens — temos novidades chegando.</p>
+
+      <div class="prose" style="margin-top: 32px;">
+        <div class="callout">
+          <p><strong>Dica da Lebre.</strong> Limpar o óculos com a roupa danifica a camada antirreflexo. Use sempre o limpa-lentes adequado — temos a solução pronta em loja.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div data-slot="footer"></div>
+<div data-slot="wa"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

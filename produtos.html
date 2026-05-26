@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Produtos · Ótica Lebre</title>
+<meta name="description" content="Armações, lentes e acessórios na Ótica Lebre — Rio Claro/SP."/>
+<link rel="icon" href="assets/logo-lebre.jpg"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+<style>
+  .produtos-hero {
+    padding: clamp(60px, 7vw, 96px) 0 clamp(40px, 5vw, 60px);
+    background: linear-gradient(180deg, var(--green-50) 0%, var(--paper) 100%);
+    text-align: center;
+  }
+  .produtos-hero h1 em { color: var(--green-700); font-weight: 400; }
+  .produtos-hero p.lede { font-size: 1.08rem; max-width: 620px; margin: 18px auto 0; }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+  .cat-card {
+    background: var(--white);
+    border: 1px solid var(--ink-200);
+    border-radius: var(--r-xl);
+    padding: 48px 32px;
+    text-align: center;
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+    text-decoration: none;
+  }
+  .cat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--green-100);
+  }
+  .cat-icon {
+    width: 96px; height: 96px;
+    border-radius: 24px;
+    background: var(--green-50);
+    color: var(--green-700);
+    display: grid; place-items: center;
+    margin: 0 auto 24px;
+    transition: background .25s, color .25s;
+  }
+  .cat-card:hover .cat-icon { background: var(--green-700); color: white; }
+  .cat-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+  .cat-card p { font-size: 0.96rem; margin-bottom: 18px; }
+  .cat-card .cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--green-700); font-weight: 600; font-size: 0.92rem;
+  }
+  .cat-card .cta svg { transition: transform .2s; }
+  .cat-card:hover .cta svg { transform: translateX(3px); }
+
+  .help-strip { background: var(--paper-2); padding: clamp(48px, 6vw, 72px) 0; margin-top: clamp(60px, 8vw, 96px); }
+  .help-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: center; }
+
+  @media (max-width: 880px) {
+    .cat-grid { grid-template-columns: 1fr; }
+    .help-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div data-slot="header"></div>
+
+<section class="produtos-hero">
+  <div class="container">
+    <span class="eyebrow" data-reveal style="justify-content: center;">Produtos</span>
+    <h1 data-reveal>Tudo o que sua visão precisa, <em>com curadoria da Lebre.</em></h1>
+    <p class="lede" data-reveal>Escolha por onde começar. Trabalhamos só com peças e lentes que aprovamos para os nossos clientes.</p>
+  </div>
+</section>
+
+<section style="padding: 0 0 clamp(60px, 8vw, 96px);">
+  <div class="container">
+    <div class="cat-grid">
+      <a class="cat-card" href="armacao.html" data-reveal>
+        <div class="cat-icon" style="width: 100%; height: 180px; border-radius: var(--r-lg); background: url('assets/armacoes.jpg') center/cover; margin-bottom: 24px;"></div>
+        <h3>Armações</h3>
+        <p>De grau e de sol. Marcas reconhecidas, modelos clássicos e atuais.</p>
+        <span class="cta">Ver armações
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <a class="cat-card" href="lentes.html" data-reveal>
+        <div class="cat-icon" style="width: 100%; height: 180px; border-radius: var(--r-lg); background: url('assets/lentes.jpg') center/cover; margin-bottom: 24px;"></div>
+        <h3>Lentes</h3>
+        <p>Visão simples, bifocal, multifocal e alto índice. Com os tratamentos certos para a sua rotina.</p>
+        <span class="cta">Ver lentes
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <a class="cat-card" href="acessorios.html" data-reveal>
+        <div class="cat-icon" style="width: 100%; height: 180px; border-radius: var(--r-lg); background: url('assets/acessorios.jpg') center/cover; margin-bottom: 24px;"></div>
+        <h3>Acessórios</h3>
+        <p>Limpa-lentes, estojos, oclusores e tudo que ajuda a manter o seu óculos em ordem.</p>
+        <span class="cta">Ver acessórios
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="help-strip">
+  <div class="container">
+    <div class="help-grid">
+      <div data-reveal>
+        <span class="eyebrow">Não sabe por onde começar?</span>
+        <h2>A gente te orienta.</h2>
+      </div>
+      <div data-reveal>
+        <p style="font-size: 1.04rem;">Em loja, nosso ótico responsável avalia sua receita, sua rotina e o seu estilo para indicar a combinação certa de armação + lente. Sem pressa, sem empurrão de venda. Você sai daqui com a peça certa para o seu caso.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px;">
+          <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=551935248410" target="_blank" rel="noopener">Tirar dúvida pelo WhatsApp</a>
+          <a class="btn btn-ghost" href="dicas.html">Dicas e cuidados</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div data-slot="footer"></div>
+<div data-slot="wa"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>
