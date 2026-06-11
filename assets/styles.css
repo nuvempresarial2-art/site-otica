@@ -50,6 +50,9 @@
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: var(--font-sans);
   color: var(--ink-900);
   background: var(--paper);
@@ -328,8 +331,16 @@ section { padding: clamp(64px, 9vw, 120px) 0; }
 .wa-float .wa-label { display: inline; }
 
 @media (max-width: 540px) {
-  .wa-float { padding: 14px; }
+  .wa-float { padding: 14px; bottom: 16px; right: 16px; }
   .wa-float .wa-label { display: none; }
+}
+
+/* =============== MOBILE GLOBAL =============== */
+@media (max-width: 600px) {
+  .container, .container-narrow { padding: 0 18px; }
+  .header-bar { padding: 0 18px; gap: 12px; }
+  section { padding: clamp(40px, 9vw, 64px) 0; }
+  .site-footer { padding: 56px 0 28px; }
 }
 
 /* =============== UI helpers =============== */
@@ -515,9 +526,36 @@ section { padding: clamp(64px, 9vw, 120px) 0; }
 .crumb .sep { margin: 0 8px; color: var(--ink-300); }
 
 @media (max-width: 980px) {
-  .page-shell { grid-template-columns: 1fr; gap: 32px; }
+  .page-shell { grid-template-columns: 1fr; gap: 24px; }
   .page-shell.reverse { grid-template-columns: 1fr; }
   .page-sidebar { position: static; }
+
+  /* Compacta a sidebar contextual numa barra horizontal enxuta,
+     para o conteúdo da página aparecer logo no topo ao trocar de página */
+  .sidebar-inner { padding: 14px 16px; }
+  .sidebar-eyebrow { margin-bottom: 0; }
+  .sidebar-current { display: none; }
+  .sidebar-cta { display: none; }
+  .sidebar-list {
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    overflow-x: auto;
+    gap: 8px;
+    margin-top: 12px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .sidebar-list::-webkit-scrollbar { display: none; }
+  .sidebar-list a {
+    border: 1px solid var(--ink-200);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 0.86rem;
+    white-space: nowrap;
+  }
+  .sidebar-list a:hover { padding-left: 14px; }
+  .sidebar-list .arrow { display: none; }
 }
 
 /* ============================================================

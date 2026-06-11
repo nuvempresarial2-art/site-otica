@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ótica Lebre · Tradição em saúde visual · Rio Claro/SP</title>
+<meta name="description" content="Há mais de 50 anos cuidando da saúde visual de Rio Claro e região. Referência em prótese ocular sob medida, lentes e armações."/>
+<link rel="icon" href="assets/logo-lebre.jpg"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+<style>
+  .home {
+    padding: clamp(32px, 5vw, 56px) 0 clamp(48px, 7vw, 80px);
+  }
+  .home-inner {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  /* Mapa */
+  .map-card {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    border: 1px solid var(--ink-200);
+    box-shadow: var(--shadow-md);
+    background: var(--green-50);
+  }
+  .map-card iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+  /* Dois botões na mesma largura do mapa */
+  .home-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .home-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 1rem;
+  }
+
+  /* 3 opções de clique */
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: clamp(32px, 5vw, 48px);
+  }
+  .a-card {
+    background: var(--white);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    border: 1px solid var(--ink-200);
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+    display: flex; flex-direction: column;
+  }
+  .a-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--green-100);
+  }
+  .a-card .a-img { aspect-ratio: 4/3; }
+  .a-card .a-body { padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column; }
+  .a-card h3 { margin-bottom: 10px; }
+  .a-card p { font-size: 0.95rem; flex: 1; }
+  .a-card .a-link {
+    margin-top: 14px;
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--green-700);
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .a-card .a-link svg { transition: transform .2s; }
+  .a-card:hover .a-link svg { transform: translateX(3px); }
+
+  @media (max-width: 760px) {
+    .home-actions { grid-template-columns: 1fr; }
+    .areas-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div data-slot="header"></div>
+
+<section class="home">
+  <div class="container">
+    <div class="home-inner">
+
+      <!-- Mapa -->
+      <div class="map-card" data-reveal>
+        <iframe
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Otica+Lebre&ll=-22.4116302,-47.5593625&z=18&output=embed"
+          title="Mapa da Ótica Lebre"></iframe>
+      </div>
+
+      <!-- Dois botões -->
+      <div class="home-actions">
+        <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=551935248410" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.86 7.86 0 0 0 12.06 4 7.94 7.94 0 0 0 4.13 11.93a7.86 7.86 0 0 0 1.06 3.96L4.05 20l4.21-1.1a7.93 7.93 0 0 0 3.79.97h.01a7.94 7.94 0 0 0 7.93-7.92 7.86 7.86 0 0 0-2.39-5.63Z"/></svg>
+          WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=%C3%93tica+Lebre%2C+R.+3%2C+885+-+Centro%2C+Rio+Claro+-+SP" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Como chegar
+        </a>
+      </div>
+
+      <!-- 3 opções de clique -->
+      <div class="areas-grid">
+        <a class="a-card" href="quem-somos.html" data-reveal>
+          <div class="a-img" style="background-image: url('assets/fachada.jpg'); background-size: cover; background-position: center 78%; aspect-ratio: 4/3;"></div>
+          <div class="a-body">
+            <span class="tag-chip" style="margin-bottom: 14px;"><span class="dot"></span>Nossa história</span>
+            <h3>Quem somos</h3>
+            <p>Mais de 50 anos sendo a ótica de confiança das famílias de Rio Claro, com três prêmios populares e o título de Especialista Varilux.</p>
+            <span class="a-link">Conhecer a Lebre
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a class="a-card" href="protese-ocular.html" data-reveal>
+          <div class="a-img" style="background-image: url('assets/protese.jpg'); background-size: cover; background-position: center; aspect-ratio: 4/3;"></div>
+          <div class="a-body">
+            <span class="tag-chip" style="margin-bottom: 14px;"><span class="dot"></span>Diferencial exclusivo</span>
+            <h3>Prótese ocular sob medida</h3>
+            <p>Método exclusivo de confecção por modelagem, oferecendo maior conforto e movimentação natural do olho artificial.</p>
+            <span class="a-link">Conhecer a clínica
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a class="a-card" href="produtos.html" data-reveal>
+          <div class="a-img" style="background-image: url('assets/produtos.jpg'); background-size: cover; background-position: center; aspect-ratio: 4/3;"></div>
+          <div class="a-body">
+            <span class="tag-chip" style="margin-bottom: 14px;"><span class="dot"></span>Catálogo</span>
+            <h3>Nossos produtos</h3>
+            <p>Armações de grau e sol, lentes Varilux e tratamentos, acessórios. Tudo selecionado com a curadoria da Lebre.</p>
+            <span class="a-link">Ver categorias
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div data-slot="footer"></div>
+<div data-slot="wa"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

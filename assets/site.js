@@ -139,40 +139,17 @@
     return `
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a class="brand" href="index.html">
-              <span class="brand-mark"><img src="${LOGO_URL}" alt=""/></span>
-              <span class="brand-name">
-                <span class="name">Ótica Lebre</span>
-                <span class="tag">Tradição em saúde visual</span>
-              </span>
-            </a>
-            <p>Há mais de 50 anos cuidando da saúde visual de Rio Claro e região. Tradição, especialização técnica e atendimento humano.</p>
-          </div>
-          <div>
-            <h4>Navegação</h4>
-            <ul class="footer-list">${navLinks}</ul>
-          </div>
-          <div>
-            <h4>Atendimento</h4>
-            <ul class="footer-list">
-              <li>Seg a sex · 08h–19h</li>
-              <li>Sábado · 08h–14h</li>
-              <li>Domingo · fechado</li>
-              <li><a href="${PHONE_TEL}">${PHONE}</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Onde estamos</h4>
-            <ul class="footer-list">
-              <li>R. 3, 885 — Centro</li>
-              <li>Rio Claro · SP · 13500-160</li>
-              <li><a href="https://www.google.com/maps/place/%C3%93tica+Lebre/@-22.411788,-47.559345,19z/data=!4m10!1m2!2m1!1sOtica+Lebre,+Rio+Claro,+SP!3m6!1s0x94c7da5a8a7e9c51:0xb0258b71657cbdbb!8m2!3d-22.4116302!4d-47.5593625" target="_blank" rel="noopener">Como chegar →</a></li>
-            </ul>
-          </div>
+        <div class="footer-brand" style="text-align:center; max-width:560px; margin:0 auto;">
+          <a class="brand" href="index.html" style="justify-content:center;">
+            <span class="brand-mark"><img src="${LOGO_URL}" alt=""/></span>
+            <span class="brand-name">
+              <span class="name">Ótica Lebre</span>
+              <span class="tag">Tradição em saúde visual</span>
+            </span>
+          </a>
+          <p>Há mais de 50 anos cuidando da saúde visual de Rio Claro e região. Tradição, especialização técnica e atendimento humano.</p>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom" style="flex-direction:column; justify-content:center; align-items:center; gap:16px; text-align:center;">
           <span>© ${new Date().getFullYear()} Ótica Lebre · Todos os direitos reservados</span>
           <div class="socials">
             <a href="${INSTAGRAM}" target="_blank" rel="noopener" aria-label="Instagram">
