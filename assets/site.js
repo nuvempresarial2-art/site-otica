@@ -160,14 +160,6 @@
     </footer>`;
   }
 
-  function buildWhatsappFloat() {
-    return `
-    <a class="wa-float" href="${WHATSAPP_URL}" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.86 7.86 0 0 0 12.06 4 7.94 7.94 0 0 0 4.13 11.93a7.86 7.86 0 0 0 1.06 3.96L4.05 20l4.21-1.1a7.93 7.93 0 0 0 3.79.97h.01a7.94 7.94 0 0 0 7.93-7.92 7.86 7.86 0 0 0-2.39-5.63Z"/></svg>
-      <span class="wa-label">Atendimento por WhatsApp</span>
-    </a>`;
-  }
-
   function init() {
     const headerSlot = document.querySelector('[data-slot="header"]');
     const footerSlot = document.querySelector('[data-slot="footer"]');
@@ -176,7 +168,7 @@
 
     if (headerSlot) headerSlot.outerHTML = buildHeader();
     if (footerSlot) footerSlot.outerHTML = buildFooter();
-    if (waSlot)     waSlot.outerHTML     = buildWhatsappFloat();
+    if (waSlot)     waSlot.remove();
     if (sideSlot)   sideSlot.outerHTML   = buildSidebar();
 
     const toggle = document.querySelector('.menu-toggle');
