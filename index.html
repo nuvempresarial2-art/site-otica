@@ -117,6 +117,18 @@
   .o-card p { font-size: 0.95rem; flex: 1; }
   .o-card .btn { margin-top: 18px; width: 100%; justify-content: center; }
 
+  /* Card único com os 3 tipos de produto */
+  .offers .o-grid--single { grid-template-columns: 1fr; max-width: 960px; }
+  .o-card--wide { display: grid; grid-template-columns: 1.05fr 1fr; align-items: stretch; }
+  .o-card--wide .o-img { aspect-ratio: auto; min-height: 100%; }
+  .o-card--wide .o-body { padding: 40px 44px; justify-content: center; }
+  .o-card--wide h3 { font-size: 1.5rem; margin-bottom: 0; }
+  .o-list { list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-direction: column; gap: 14px; }
+  .o-list li { position: relative; padding-left: 22px; font-size: 0.98rem; line-height: 1.5; color: var(--ink-700); }
+  .o-list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: var(--green-700); }
+  .o-list strong { color: var(--ink-900); font-weight: 600; }
+  .o-card--wide .btn { width: auto; align-self: flex-start; margin-top: 28px; }
+
   /* ===== DESTAQUE PRÓTESE OCULAR ===== */
   .protese {
     background: var(--paper-2);
@@ -212,6 +224,10 @@
     .proof-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
     .proof-item:nth-child(3) { border-left: 0; }
     .diffs .d-grid, .offers .o-grid, .rv-grid { grid-template-columns: 1fr; }
+    .o-card--wide { grid-template-columns: 1fr; }
+    .o-card--wide .o-img { aspect-ratio: 16 / 10; min-height: 0; }
+    .o-card--wide .o-body { padding: 28px 26px; }
+    .o-card--wide .btn { width: 100%; }
     .protese-grid { grid-template-columns: 1fr; }
     .protese-photo { width: 100%; max-width: 100%; order: 2; aspect-ratio: 16 / 11; }
     .local-grid { grid-template-columns: 1fr; }
@@ -332,29 +348,17 @@
       <span class="eyebrow">O que você precisa</span>
       <h2>Chama no WhatsApp pelo que te trouxe aqui.</h2>
     </div>
-    <div class="o-grid">
-      <div class="o-card" data-reveal>
+    <div class="o-grid o-grid--single">
+      <div class="o-card o-card--wide" data-reveal>
         <div class="o-img" style="background-image: url('assets/armacoes.jpg');"></div>
         <div class="o-body">
-          <h3>Óculos de grau</h3>
-          <p>Armações para todos os estilos com a lente certa para sua receita. Traga sua prescrição que a gente cuida do resto.</p>
-          <a class="btn btn-primary wa-link" data-msg="Olá! Vim pelo Google e quero saber sobre óculos de grau." data-loc="grau" href="https://wa.me/551935248410" target="_blank" rel="noopener">Quero óculos de grau</a>
-        </div>
-      </div>
-      <div class="o-card" data-reveal>
-        <div class="o-img" style="background-image: url('assets/produtos.jpg');"></div>
-        <div class="o-body">
-          <h3>Óculos de sol</h3>
-          <p>Modelos das principais marcas, com proteção UV de verdade. Com ou sem grau — do clássico ao esportivo.</p>
-          <a class="btn btn-primary wa-link" data-msg="Olá! Vim pelo Google e quero saber sobre óculos de sol." data-loc="sol" href="https://wa.me/551935248410" target="_blank" rel="noopener">Quero óculos de sol</a>
-        </div>
-      </div>
-      <div class="o-card" data-reveal>
-        <div class="o-img" style="background-image: url('assets/lentes.jpg');"></div>
-        <div class="o-body">
-          <h3>Lentes Varilux</h3>
-          <p>Somos Especialista Varilux. Multifocais, antirreflexo e tratamentos — adaptação feita por quem entende.</p>
-          <a class="btn btn-primary wa-link" data-msg="Olá! Vim pelo Google e quero saber sobre lentes (Varilux / multifocais)." data-loc="lentes" href="https://wa.me/551935248410" target="_blank" rel="noopener">Quero saber de lentes</a>
+          <h3>Óculos de grau, de sol e lentes Varilux</h3>
+          <ul class="o-list">
+            <li><strong>Óculos de grau</strong> — armações para todos os estilos com a lente certa para sua receita.</li>
+            <li><strong>Óculos de sol</strong> — principais marcas, com proteção UV de verdade, com ou sem grau.</li>
+            <li><strong>Lentes Varilux</strong> — somos Especialista Varilux: multifocais, antirreflexo e tratamentos.</li>
+          </ul>
+          <a class="btn btn-primary wa-link" data-msg="Olá! Vim pelo Google e quero saber sobre óculos de grau, de sol e lentes." data-loc="produtos" href="https://wa.me/551935248410" target="_blank" rel="noopener">Falar no WhatsApp</a>
         </div>
       </div>
     </div>
