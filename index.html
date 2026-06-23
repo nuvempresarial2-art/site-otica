@@ -145,6 +145,8 @@
   .protese ul { list-style: none; padding: 0; margin: 20px 0 28px; display: grid; gap: 12px; }
   .protese li { display: flex; gap: 12px; align-items: flex-start; font-size: 1rem; color: var(--ink-700); }
   .protese li svg { color: var(--green-700); flex-shrink: 0; margin-top: 3px; }
+  .protese-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .protese-actions .btn-ghost { white-space: normal; }
 
   /* ===== DEPOIMENTOS ===== */
   .reviews { background: var(--green-50); }
@@ -379,10 +381,16 @@
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Recebemos pacientes de toda a região</li>
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Acompanhamento próximo, do molde ao ajuste final</li>
         </ul>
-        <a class="btn btn-primary btn-arrow wa-link" data-msg="Olá! Vim pelo Google e gostaria de informações sobre prótese ocular sob medida." data-loc="protese" href="https://wa.me/551935248410" target="_blank" rel="noopener">
-          Falar sobre prótese ocular
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
+        <div class="protese-actions">
+          <a class="btn btn-primary btn-arrow wa-link" data-phone="551935255376" data-msg="Olá! Vim pelo Google e gostaria de informações sobre prótese ocular sob medida." data-loc="protese" href="https://wa.me/551935255376" target="_blank" rel="noopener">
+            Falar sobre prótese ocular
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-ghost btn-arrow" href="https://www.google.com/maps/search/?api=1&query=Av.%205%2C%20213%20-%20Centro%2C%20Rio%20Claro%20-%20SP%2C%2013500-380" target="_blank" rel="noopener" aria-label="Ver endereço no mapa: Av. 5, 213 - Centro, Rio Claro - SP, 13500-380">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Av. 5, 213 — Centro, Rio Claro
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -513,7 +521,8 @@
   window.dataLayer = window.dataLayer || [];
   document.querySelectorAll('.wa-link').forEach(function(a) {
     var msg = a.getAttribute('data-msg') || 'Olá! Vim pelo site da Ótica Lebre.';
-    a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+    var phone = a.getAttribute('data-phone') || WA_NUMBER;
+    a.href = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(msg);
     a.addEventListener('click', function() {
       window.dataLayer.push({
         event: 'whatsapp_click',
