@@ -44,8 +44,35 @@
     aspect-ratio: 4/5;
     border-radius: var(--r-xl);
     box-shadow: var(--shadow-lg);
-    background-size: cover; background-position: center;
+    overflow: hidden;
   }
+
+  /* ===== CARROSSEL (reutilizável) ===== */
+  .carousel { position: relative; width: 100%; height: 100%; overflow: hidden; touch-action: pan-y; }
+  .carousel-track { display: flex; height: 100%; transition: transform .55s cubic-bezier(.4,0,.2,1); will-change: transform; }
+  .carousel-slide { flex: 0 0 100%; height: 100%; }
+  .carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .carousel-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+    width: 40px; height: 40px; border-radius: 50%; border: none;
+    background: rgba(255,255,255,0.85); color: var(--ink-900);
+    display: grid; place-items: center; cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.18); transition: background .2s, opacity .2s;
+    opacity: 0;
+  }
+  .carousel:hover .carousel-arrow, .carousel:focus-within .carousel-arrow { opacity: 1; }
+  .carousel-arrow:hover { background: #fff; }
+  .carousel-arrow.prev { left: 12px; }
+  .carousel-arrow.next { right: 12px; }
+  .carousel-arrow svg { width: 20px; height: 20px; }
+  .carousel-dots { position: absolute; bottom: 14px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; z-index: 2; }
+  .carousel-dots button {
+    width: 8px; height: 8px; padding: 0; border: none; border-radius: 50%;
+    background: rgba(255,255,255,0.55); cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.35); transition: background .2s, transform .2s;
+  }
+  .carousel-dots button.active { background: #fff; transform: scale(1.35); }
+  @media (max-width: 540px) { .carousel-arrow { opacity: 1; width: 36px; height: 36px; } }
 
   /* ===== FAIXA DE PROVA SOCIAL ===== */
   .proof {
@@ -131,9 +158,9 @@
     gap: clamp(32px, 5vw, 64px); align-items: center;
   }
   .protese-photo {
-    aspect-ratio: 5/4; border-radius: var(--r-xl);
+    aspect-ratio: 1/1; border-radius: var(--r-xl);
     box-shadow: var(--shadow-md);
-    background-size: cover; background-position: center;
+    overflow: hidden;
   }
   .protese ul { list-style: none; padding: 0; margin: 20px 0 28px; display: grid; gap: 12px; }
   .protese li { display: flex; gap: 12px; align-items: flex-start; font-size: 1rem; color: var(--ink-700); }
@@ -209,7 +236,7 @@
     .hero-photo {
       order: 2;
       width: 100%; max-width: 100%;
-      aspect-ratio: 16 / 11;
+      aspect-ratio: 4 / 5;
     }
     .proof-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
     .proof-item:nth-child(3) { border-left: 0; }
@@ -219,7 +246,7 @@
     .o-card--wide .o-body { padding: 28px 26px; }
     .o-card--wide .btn { width: 100%; }
     .protese-grid { grid-template-columns: 1fr; }
-    .protese-photo { width: 100%; max-width: 100%; order: 2; aspect-ratio: 16 / 11; }
+    .protese-photo { width: 100%; max-width: 100%; order: 2; aspect-ratio: 1 / 1; }
     .lp-footer .footer-info { grid-template-columns: 1fr; gap: 28px; max-width: 360px; }
   }
   @media (max-width: 540px) {
@@ -267,7 +294,18 @@
           </a>
         </div>
       </div>
-      <div class="hero-photo" style="background-image: url('assets/hero-woman.jpg');" data-reveal></div>
+      <div class="hero-photo" data-reveal>
+        <div class="carousel" data-carousel data-autoplay="5000" aria-label="Fotos da Ótica Lebre">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="assets/carrossel/hero/hero-1.jpg" alt="Fachada da Ótica Lebre no centro de Rio Claro"></div>
+            <div class="carousel-slide"><img data-src="assets/carrossel/hero/hero-4.jpg" alt="Entrada da Ótica Lebre"></div>
+            <div class="carousel-slide"><img data-src="assets/carrossel/hero/hero-5.jpg" alt="Armações de óculos na Ótica Lebre"></div>
+            <div class="carousel-slide"><img data-src="assets/carrossel/hero/hero-6.jpg" alt="Mostruário de armações"></div>
+            <div class="carousel-slide"><img data-src="assets/carrossel/hero/hero-3.jpg" alt="Óculos e acessórios em exposição"></div>
+            <div class="carousel-slide"><img data-src="assets/carrossel/hero/hero-2.jpg" alt="Interior da loja Ótica Lebre"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -353,7 +391,18 @@
 <section class="protese">
   <div class="container">
     <div class="protese-grid">
-      <div class="protese-photo" style="background-image: url('assets/protese-hero.jpg');" data-reveal></div>
+      <div class="protese-photo" data-reveal>
+        <div class="carousel" data-carousel data-autoplay="6000" aria-label="Espaço de prótese ocular">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="assets/carrossel/protese/protese-6.jpg" alt="Próteses oculares feitas sob medida" loading="lazy"></div>
+            <div class="carousel-slide"><img data-src="assets/carrossel/protese/protese-4.jpg" alt="Sala de atendimento de prótese ocular"></div>
+            <div class="carousel-slide"><img data-src="assets/carrossel/protese/protese-3.jpg" alt="Corredor da clínica"></div>
+            <div class="carousel-slide"><img data-src="assets/carrossel/protese/protese-1.jpg" alt="Recepção e área de espera"></div>
+            <div class="carousel-slide"><img data-src="assets/carrossel/protese/protese-2.jpg" alt="Sala de espera"></div>
+            <div class="carousel-slide"><img data-src="assets/carrossel/protese/protese-5.jpg" alt="Consultório de atendimento"></div>
+          </div>
+        </div>
+      </div>
       <div data-reveal>
         <span class="eyebrow">Diferencial exclusivo</span>
         <h2>Prótese ocular sob medida</h2>
@@ -467,6 +516,76 @@
         wa_location: a.getAttribute('data-loc') || 'desconhecido'
       });
     });
+  });
+
+  // Carrossel(s): autoplay + setas + bolinhas + swipe no celular
+  document.querySelectorAll('[data-carousel]').forEach(function(root) {
+    var track = root.querySelector('.carousel-track');
+    var slides = Array.prototype.slice.call(root.querySelectorAll('.carousel-slide'));
+    if (slides.length <= 1) return;
+    var index = 0;
+    var delay = parseInt(root.getAttribute('data-autoplay'), 10) || 0;
+    var timer = null;
+
+    // Lazy: carrega as fotos quando o carrossel se aproxima da viewport
+    var io = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) {
+        root.querySelectorAll('img[data-src]').forEach(function(img) {
+          img.src = img.getAttribute('data-src');
+          img.removeAttribute('data-src');
+        });
+        io.disconnect();
+      }
+    }, { rootMargin: '300px' });
+    io.observe(root);
+
+    var prev = document.createElement('button');
+    prev.className = 'carousel-arrow prev'; prev.type = 'button';
+    prev.setAttribute('aria-label', 'Foto anterior');
+    prev.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>';
+    var next = document.createElement('button');
+    next.className = 'carousel-arrow next'; next.type = 'button';
+    next.setAttribute('aria-label', 'Próxima foto');
+    next.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg>';
+    root.appendChild(prev); root.appendChild(next);
+
+    var dots = document.createElement('div');
+    dots.className = 'carousel-dots';
+    var dotBtns = slides.map(function(_, i) {
+      var b = document.createElement('button'); b.type = 'button';
+      b.setAttribute('aria-label', 'Ir para a foto ' + (i + 1));
+      b.addEventListener('click', function() { go(i); restart(); });
+      dots.appendChild(b); return b;
+    });
+    root.appendChild(dots);
+
+    function update() {
+      track.style.transform = 'translateX(' + (-index * 100) + '%)';
+      dotBtns.forEach(function(b, i) { b.classList.toggle('active', i === index); });
+    }
+    function go(i) { index = (i + slides.length) % slides.length; update(); }
+    function start() { if (delay && !timer) timer = setInterval(function() { go(index + 1); }, delay); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); start(); }
+
+    prev.addEventListener('click', function() { go(index - 1); restart(); });
+    next.addEventListener('click', function() { go(index + 1); restart(); });
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+
+    var x0 = null;
+    root.addEventListener('touchstart', function(e) { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+    root.addEventListener('touchend', function(e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+      x0 = null; start();
+    });
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) stop(); else start();
+    });
+
+    update(); start();
   });
 
   // Destaca o dia de hoje na tabela de horários
